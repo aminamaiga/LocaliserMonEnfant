@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">LocaliserMonEnfant</string>
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">Suivant</string>
+    <string name="skip">Passé</string>
+    <string name="start">Démarrer</string>
+
+    <string name="slide_1_title">Hello!</string>
+    <string name="slide_1_desc">Découvrez la localisation de l\'enfant en ligne à partir de tout coin du monde.</string>
+
+    <string name="slide_2_title">Hello!</string>
+    <string name="slide_2_desc">Ecoutez ce qui se passe au tour de l\'enfant même si vous n\'êtes pas auprès de l\'enfant.</string>
+
+    <string name="slide_3_title"></string>
+    <string name="slide_3_desc">Apprenez à votre enfant à atteindre l\'objectif! Réalizer les rêves de votre enfant. </string>
+
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Mot de passe</string>
+    <string name="login_password_hint_confirm">Confirmer mot de passe</string>
+    <string name="register">S\'inscrire</string>
+    <string name="alerady_have_account">Vous avez déjà \n un compte?</string>
+    <string name="welcome">Bienvenue!</string>
+    <string name="d_j_un_compte">Déjà un compte?</string>
+    <string name="connexion">Connexion</string>
+    <string name="new_register">Nouveau? S\'inscrire.</string>
+    <string name="call">Appeler</string>
+    <string name="close">Ouvrir</string>
+    <string name="open">Fermer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="user_name">Aminata Maiga</string>
+    <string name="user_email">aminata.maiga@etu.umontpellier.fr</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+</resources>
