@@ -90,7 +90,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_home:
                fragment = new MapsControlFragment();
                 break;
-            case R.id.item1:
+            case R.id.nav_change_photo_name:
                 fragment = new MyAccountFragment();
                 break;
         }

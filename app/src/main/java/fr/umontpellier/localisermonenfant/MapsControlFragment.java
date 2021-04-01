@@ -47,8 +47,8 @@ public class MapsControlFragment extends Fragment {
 
                     LatLng customMarkerLocationOne = new LatLng(43.611900, 3.877200);
                     LatLng customMarkerLocationTwo = new LatLng(43.622820, 3.877236);
-                    LatLng customMarkerLocationThree = new LatLng(28.580903, 77.317408);
-                    LatLng customMarkerLocationFour = new LatLng(28.580108, 77.315271);
+                    LatLng customMarkerLocationThree = new LatLng(43.644820, 3.917236);
+                    LatLng customMarkerLocationFour = new LatLng(43.685820, 3.897236);
 
                     googleMap.addMarker(new MarkerOptions().position(customMarkerLocationOne).
                             icon(BitmapDescriptorFactory.fromBitmap(
@@ -74,9 +74,9 @@ public class MapsControlFragment extends Fragment {
                     builder.include(customMarkerLocationTwo); //Taking Point A (First LatLng)
                     builder.include(customMarkerLocationFour);
                     LatLngBounds bounds = builder.build();
-                    CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, 200);
+                    CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, 300);
                     googleMap.moveCamera(cu);
-                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(montpellierLocation.latitude, montpellierLocation.longitude), 1000), null);
+                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(montpellierLocation.latitude, montpellierLocation.longitude), 12), null);
                 }
             });
         }

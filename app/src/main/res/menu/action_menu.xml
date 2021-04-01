@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_location_on_24px"
+            android:title="@string/control"
+            android:checked="true"/>
+       <item
+        android:id="@+id/nav_call"
+        android:icon="@drawable/ic_phone_black_18dp"
+        android:title="@string/call" />
+        <item
+            android:id="@+id/nav_sound"
+            android:icon="@drawable/ic_hearing_24px"
+            android:title="@string/sound_around" />
+        <item
+            android:id="@+id/nav_chat"
+            android:icon="@drawable/ic_question_answer_24px"
+            android:title="@string/bavarder" />
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/ic_schedule_send_24px"
+            android:title="@string/historic" />
+        <item
+            android:id="@+id/nav_track"
+            android:icon="@drawable/ic_fmd_bad_24px"
+            android:title="@string/trach_way" />
+        <item
+            android:id="@+id/nav_send_heart"
+            android:icon="@drawable/ic_favorite_border_24px"
+            android:title="@string/send_heart" />
+        <item
+            android:id="@+id/nav_batterie"
+            android:icon="@drawable/ic_battery_unknown_24px"
+            android:title="Batterie" />
+        <item
+            android:id="@+id/nav_parameter"
+            android:icon="@drawable/ic_settings_24px"
+            android:title="@string/les_param_tres_de_l_enfant" />
+    </group>
+</menu>

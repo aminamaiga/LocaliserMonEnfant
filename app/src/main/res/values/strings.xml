@@ -46,4 +46,19 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="control">Control</string>
+    <string name="sound_around">Son autour</string>
+    <string name="bavarder">Bavarder</string>
+    <string name="historic">Historique</string>
+    <string name="trach_way">Tracer la voie</string>
+    <string name="send_heart">Envoyer des coeurs</string>
+    <string name="les_param_tres_de_l_enfant">Les paramétres de l\'enfant</string>
+    <string name="ajouter_un_enfant">Ajouter un enfant</string>
+    <string name="change_photo_name">Changer le et la photo de l\'enfant</string>
+    <string name="update_location_frequency">La fréquence de la mise à jour</string>
+    <string name="notify">Notifier à l\'entrée et la sortie des lieux</string>
+    <string name="premium_account">Compte premium</string>
+    <string name="about_application">A propos de l\'application</string>
+    <string name="language">Langage</string>
+    <string name="logout">Se déconnecter</string>
 </resources>

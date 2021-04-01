@@ -6,11 +6,39 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_location_on_24px"
-            android:title="Home"
+            android:title="@string/control"
             android:checked="true"/>
        <item
-        android:id="@+id/item1"
-        android:icon="@drawable/ic_phone_black_18dp"
-        android:title="@string/call" />
+        android:id="@+id/nav_add_new_child"
+        android:icon="@drawable/ic_person_add_24px"
+        android:title="@string/ajouter_un_enfant" />
+        <item
+            android:id="@+id/nav_change_photo_name"
+            android:icon="@drawable/ic_create_24px"
+            android:title="@string/change_photo_name" />
+        <item
+            android:id="@+id/nav_update_frequency"
+            android:icon="@drawable/ic_sync_24px"
+            android:title="@string/update_location_frequency" />
+        <item
+            android:id="@+id/nav_notify"
+            android:icon="@drawable/ic_circle_notifications_24px"
+            android:title="@string/notify" />
+        <item
+            android:id="@+id/nav_preminium_account"
+            android:icon="@drawable/ic_admin_panel_settings_24px"
+            android:title="@string/premium_account" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_preview_24px"
+            android:title="@string/about_application" />
+        <item
+            android:id="@+id/nav_language"
+            android:icon="@drawable/ic_language_24px"
+            android:title="@string/language" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout_24px"
+            android:title="@string/logout" />
     </group>
 </menu>
