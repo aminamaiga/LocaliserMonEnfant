@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "281494459733",
+    "project_id": "starry-compiler-309413",
+    "storage_bucket": "starry-compiler-309413.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:281494459733:android:68400609fce1a5d3c98bdc",
+        "android_client_info": {
+          "package_name": "fr.umontpellier.localisermonenfant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "281494459733-r1i7vp1m68verqi6n90lld51jnpar99f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcEVLCJjJGidJIjGHPl9lBaxPlJIqQ8mg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "281494459733-r1i7vp1m68verqi6n90lld51jnpar99f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

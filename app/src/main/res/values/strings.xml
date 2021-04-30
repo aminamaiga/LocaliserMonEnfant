@@ -61,4 +61,25 @@
     <string name="about_application">A propos de l\'application</string>
     <string name="language">Langage</string>
     <string name="logout">Se déconnecter</string>
+    <string name="child">Enfant</string>
+    <string name="parent">Parent</string>
+    <string name="title_activity_login_child2">LoginActivityChild2</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_main_child">MainActivityChild</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="adresse">Adresse</string>
+    <string name="prenom">Prenom</string>
+    <string name="nom">Nom</string>
 </resources>

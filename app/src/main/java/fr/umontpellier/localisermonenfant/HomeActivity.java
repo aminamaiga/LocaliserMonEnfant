@@ -16,6 +16,7 @@ import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
+import fr.umontpellier.localisermonenfant.fragments.AddChildFragment;
 import fr.umontpellier.localisermonenfant.fragments.MyAccountFragment;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -92,6 +93,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_change_photo_name:
                 fragment = new MyAccountFragment();
+                break;
+                case R.id.nav_add_new_child:
+                fragment = new AddChildFragment();
                 break;
         }
         fragmentManager.beginTransaction().replace(R.id.frameLayout, fragment).commit();

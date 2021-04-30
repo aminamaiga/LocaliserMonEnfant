@@ -15,5 +15,9 @@
     <dimen name="newsMoreTextSize">18sp</dimen>
     <dimen name="loginViewsMargin">20dp</dimen>
     <dimen name="dimen_2dp">2dp</dimen>
+    <dimen name="dimen_20dp">2dp</dimen>
+    <dimen name="dimen_160dp">160dp</dimen>
+    <dimen name="dimen_100dp">100dp</dimen>
     <dimen name="round_profile_in_map">46dp</dimen>
+    <dimen name="l_100">100dp</dimen>
 </resources>

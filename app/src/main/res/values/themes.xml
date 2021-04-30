@@ -14,4 +14,13 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Theme.LocaliserMonEnfant.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.LocaliserMonEnfant.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.LocaliserMonEnfant.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>
