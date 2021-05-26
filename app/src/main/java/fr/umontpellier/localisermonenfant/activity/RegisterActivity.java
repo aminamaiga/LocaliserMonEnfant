@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+
 import java.util.Objects;
 
 import fr.umontpellier.localisermonenfant.R;
@@ -30,7 +31,13 @@ public class RegisterActivity extends AppCompatActivity {
         resgisterViewModel.getUser().observe(this, new Observer<User>() {
             @Override
             public void onChanged(User user) {
-                if (TextUtils.isEmpty(Objects.requireNonNull(user).getEmail())) {
+                if (TextUtils.isEmpty(Objects.requireNonNull(user).getFirstName())) {
+                    binding.editTextFirstName.setError("Prenom est vide.");
+                    binding.editTextFirstName.requestFocus();
+                } else if (TextUtils.isEmpty(Objects.requireNonNull(user).getLastName())) {
+                    binding.editTextName.setError("Nom est vide.");
+                    binding.editTextName.requestFocus();
+                } else if (TextUtils.isEmpty(Objects.requireNonNull(user).getEmail())) {
                     binding.editTextEmail.setError("Entrer une e-mail");
                     binding.editTextEmail.requestFocus();
                 } else if (!user.isEmailValid()) {
@@ -39,15 +46,9 @@ public class RegisterActivity extends AppCompatActivity {
                 } else if (TextUtils.isEmpty(Objects.requireNonNull(user).getPassword())) {
                     binding.editTextPassword.setError("Entrer un mot de passe");
                     binding.editTextPassword.requestFocus();
-                } else if (user.isPasswordLengthGreaterThan5()) {
+                } else if (!user.isPasswordLengthGreaterThan5()) {
                     binding.editTextPassword.setError("Mot de passe doit être au minimuin 4 chiffres");
                     binding.editTextPassword.requestFocus();
-                } else if (TextUtils.isEmpty(Objects.requireNonNull(user).getFirstName())) {
-                    binding.editTextFirstName.setError("Prenom est vide.");
-                    binding.editTextFirstName.requestFocus();
-                } else if (TextUtils.isEmpty(Objects.requireNonNull(user).getLastName())) {
-                    binding.editTextName.setError("Nom est vide.");
-                    binding.editTextName.requestFocus();
                 } else {
                     binding.editTextEmail.setText(user.getEmail());
                     binding.editTextPassword.setText(user.getPassword());
@@ -61,7 +62,6 @@ public class RegisterActivity extends AppCompatActivity {
         binding.buttonGoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
             }
         });
     }

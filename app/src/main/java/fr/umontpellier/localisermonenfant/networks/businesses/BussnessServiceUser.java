@@ -3,7 +3,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import java.io.IOException;
-import fr.umontpellier.localisermonenfant.HomeActivity;
+
+import fr.umontpellier.localisermonenfant.activity.LoginActivity;
 import fr.umontpellier.localisermonenfant.models.User;
 import fr.umontpellier.localisermonenfant.networks.RetrofitBuilder;
 import fr.umontpellier.localisermonenfant.networks.services.UserWebService;
@@ -42,7 +43,7 @@ public class BussnessServiceUser {
                     Log.d(TAG, "message " + response.message() + "code " +response.code() );
                     // ok your user is authentificated
                     if (response.isSuccessful()){
-                        Intent intent = new Intent(context, HomeActivity.class);
+                        Intent intent = new Intent(context, LoginActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
                         context.startActivity(intent);
                     } else {

@@ -7,23 +7,21 @@ import java.util.Date;
 
 public class User {
    private String id;
-   private String firstName;
-   private String lastName;
+   private String firstname;
+   private String lastname;
    private String email;
    private String password;
    private String adresse;
-   private Date birthdate;
 
     public User(){
     }
 
     public User(String firstName, String lastName, String email, String password, String adresse, Date birthdate) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstname = firstName;
+        this.lastname = lastName;
         this.email = email;
         this.password = password;
         this.adresse = adresse;
-        this.birthdate = birthdate;
     }
 
     public String getId() {
@@ -35,19 +33,19 @@ public class User {
     }
 
     public String getFirstName() {
-        return firstName;
+        return firstname;
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.firstname = firstName;
     }
 
     public String getLastName() {
-        return lastName;
+        return lastname;
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.lastname = lastName;
     }
 
     public String getEmail() {
@@ -74,19 +72,11 @@ public class User {
         this.adresse = adresse;
     }
 
-    public Date getBirthdate() {
-        return birthdate;
-    }
-
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
-    }
-
     public boolean isEmailValid() {
         return Patterns.EMAIL_ADDRESS.matcher(getEmail()).matches();
     }
 
     public boolean isPasswordLengthGreaterThan5() {
-        return ! (getPassword().length() < 4);
+        return ! (getPassword().length() <= 4);
     }
 }

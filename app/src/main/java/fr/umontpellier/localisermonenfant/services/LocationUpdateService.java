@@ -8,25 +8,18 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 public class LocationUpdateService extends Service implements LocationListener {
     boolean isGPSEnable = false;
     boolean isNetworkEnable = false;
-    double latitude, longitude;
+    double latitude, longitude, lastLatitude, lastLongitude;
     LocationManager locationManager;
     Location location;
-    private Handler mHandler = new Handler();
-    private Timer mTimer = null;
-    long notify_interval = 1000;
     public static String str_receiver = "servicetutorial.service.receiver";
     Intent intent;
 
@@ -42,10 +35,8 @@ public class LocationUpdateService extends Service implements LocationListener {
     @Override
     public void onCreate() {
         super.onCreate();
-        mTimer = new Timer();
-       // mTimer.schedule(new TimerTaskToGetLocation(), 5, notify_interval);
         intent = new Intent(str_receiver);
-       fn_getlocation();
+        fn_getlocation();
     }
 
     @Override
@@ -97,7 +88,6 @@ public class LocationUpdateService extends Service implements LocationListener {
                         fn_update(location);
                     }
                 }
-
             }
 
             if (isGPSEnable) {
@@ -125,37 +115,25 @@ public class LocationUpdateService extends Service implements LocationListener {
                         return;
                     }
                     location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                    if (location!=null){
-                        Log.e("latitude",location.getLatitude()+"");
-                        Log.e("longitude",location.getLongitude()+"");
+                    if (location != null) {
+                        Log.e("latitude", location.getLatitude() + "");
+                        Log.e("longitude", location.getLongitude() + "");
                         latitude = location.getLatitude();
                         longitude = location.getLongitude();
                         fn_update(location);
                     }
                 }
             }
-
-
-        }
-
-    }
-
-   private class TimerTaskToGetLocation extends TimerTask {
-        @Override
-        public void run() {
-            mHandler.post(new Runnable() {
-                @Override
-                public void run() {
-                    fn_getlocation();
-                }
-            });
-
         }
     }
 
-    private void fn_update(Location location){
-        intent.putExtra("latutide",location.getLatitude()+"");
-        intent.putExtra("longitude",location.getLongitude()+"");
-        sendBroadcast(intent);
+    private void fn_update(Location location) {
+        intent.putExtra("latutide", location.getLatitude() + "");
+        intent.putExtra("longitude", location.getLongitude() + "");
+        if (lastLatitude != latitude || lastLongitude != longitude) {
+            sendBroadcast(intent);
+            lastLongitude = longitude;
+            lastLatitude = latitude;
+        }
     }
 }

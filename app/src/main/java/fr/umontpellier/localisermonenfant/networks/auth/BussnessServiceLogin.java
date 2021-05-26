@@ -12,14 +12,16 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import fr.umontpellier.localisermonenfant.GlobalClass;
-import fr.umontpellier.localisermonenfant.HomeActivity;
+import fr.umontpellier.localisermonenfant.activity.HomeActivity;
 import fr.umontpellier.localisermonenfant.models.requests.UserLogin;
 import fr.umontpellier.localisermonenfant.models.responses.UserResponse;
 import fr.umontpellier.localisermonenfant.networks.RetrofitBuilder;
 import fr.umontpellier.localisermonenfant.utils.AlertNetworkError;
+import fr.umontpellier.localisermonenfant.utils.PrefUserInfos;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -69,28 +71,32 @@ public class BussnessServiceLogin {
                         editor.putString("TOKEN", currentUser.getToken());
                         editor.commit();
 
-                        Intent intent = new Intent(context, HomeActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-                        context.startActivity(intent);
                         //
                         Algorithm algorithmHS = Algorithm.HMAC256("RANDOM_TOKEN_SECRET");
                         try {
+                            Map<String, String> userData = new HashMap<>();
                             JWTVerifier verifier = JWT.require(algorithmHS).build();
                             DecodedJWT jwt = verifier.verify(currentUser.getToken());
                             Map<String, Claim> claims = jwt.getClaims();    //Key is the Claim name
                             for (Map.Entry<String, Claim> claim: claims.entrySet()) {
-                                Log.d(TAG, "claim " + claim.getValue());
+                                userData.put(claim.getKey(), claim.getValue().toString());
+                                Log.d(TAG, "claim " + claim.getKey() + " " +claim.getValue().asString());
                             }
-
+                            PrefUserInfos prefUserInfos = new PrefUserInfos(context);
+                            prefUserInfos.saveMap(userData);
                         }catch (JWTVerificationException exception){
                             Log.e(TAG, "========== Exception " + exception.getMessage());
                         }
+
+                        Intent intent = new Intent(context, HomeActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                        context.startActivity(intent);
                     }
                 }else{
                     try {
-                        AlertNetworkError.showNetworkDialog(context, response.errorBody().string());
+                        AlertNetworkError.showNetworkDialog(context, response.errorBody().string() + "code: " +response.code());
                     } catch (IOException e) {
-                        e.printStackTrace();
+                       Log.e(TAG, e.getMessage());
                     }
                 }
             }

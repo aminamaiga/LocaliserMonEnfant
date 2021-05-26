@@ -1,33 +1,31 @@
 package fr.umontpellier.localisermonenfant.models;
 
+import com.squareup.moshi.Json;
+
+import java.io.Serializable;
 import java.util.Date;
 
-public class Zone {
+public class Zone implements Serializable {
     Long id;
+    String _id;
     Double latitude;
-    Double longitute;
-    String adress;
-    String locality;
-    String cityName;
-    String contryName;
-    String PostalCode;
-    Integer code;
-    Date date;
+    Double longitude;
+    String parent;
+    Double diametre;
+    @Json(name = "dateT")
+    Date dateT;
+    int type;
 
-    public Zone(){
+    public Zone() {
     }
 
-    public Zone(Long id, Double latitude, Double longitute, String adress, String locality, String cityName, String contryName, String postalCode, Integer code, Date date) {
-        this.id = id;
+    public Zone(Double latitude, Double longitude, String parent, Double diametre, Date dateT, int type) {
         this.latitude = latitude;
-        this.longitute = longitute;
-        this.adress = adress;
-        this.locality = locality;
-        this.cityName = cityName;
-        this.contryName = contryName;
-        PostalCode = postalCode;
-        this.code = code;
-        this.date = date;
+        this.longitude = longitude;
+        this.parent = parent;
+        this.diametre = diametre;
+        this.dateT = dateT;
+        this.type = type;
     }
 
     public Long getId() {
@@ -38,6 +36,14 @@ public class Zone {
         this.id = id;
     }
 
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
     public Double getLatitude() {
         return latitude;
     }
@@ -46,67 +52,43 @@ public class Zone {
         this.latitude = latitude;
     }
 
-    public Double getLongitute() {
-        return longitute;
+    public Double getLongitude() {
+        return longitude;
     }
 
-    public void setLongitute(Double longitute) {
-        this.longitute = longitute;
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getParent() {
+        return parent;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setParent(String parent) {
+        this.parent = parent;
     }
 
-    public String getLocality() {
-        return locality;
+    public Double getDiametre() {
+        return diametre;
     }
 
-    public void setLocality(String locality) {
-        this.locality = locality;
+    public void setDiametre(Double diametre) {
+        this.diametre = diametre;
     }
 
-    public String getCityName() {
-        return cityName;
+    public Date getDateT() {
+        return dateT;
     }
 
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
+    public void setDateT(Date dateT) {
+        this.dateT = dateT;
     }
 
-    public String getContryName() {
-        return contryName;
+    public int getType() {
+        return type;
     }
 
-    public void setContryName(String contryName) {
-        this.contryName = contryName;
-    }
-
-    public String getPostalCode() {
-        return PostalCode;
-    }
-
-    public void setPostalCode(String postalCode) {
-        PostalCode = postalCode;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
+    public void setType(int type) {
+        this.type = type;
     }
 }

@@ -82,4 +82,14 @@
     <string name="adresse">Adresse</string>
     <string name="prenom">Prenom</string>
     <string name="nom">Nom</string>
+    <string name="compte_enfant">Compte Enfant</string>
+    <string name="code">Code</string>
+    <string name="zone_parameter">Zone</string>
+    <string name="tr_s_sensible">Très sensible</string>
+    <string name="sensible">Sensible</string>
+    <string name="moyen">Moyen</string>
+    <string name="normale">Normale</string>
+    <string name="default_notification_channel_id">notification_parent</string>
+    <string name="upload_image">Télécharger une photo</string>
+    <string name="t_l_charger">Télécharger</string>
 </resources>

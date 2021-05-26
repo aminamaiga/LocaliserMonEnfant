@@ -1,4 +1,9 @@
-package fr.umontpellier.localisermonenfant;
+package fr.umontpellier.localisermonenfant.activity;
+
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -6,18 +11,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.Fragment;
-
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.navigation.NavigationView;
 
+import fr.umontpellier.localisermonenfant.R;
 import fr.umontpellier.localisermonenfant.fragments.AddChildFragment;
-import fr.umontpellier.localisermonenfant.fragments.MyAccountFragment;
+import fr.umontpellier.localisermonenfant.fragments.BlankZoneMenu;
+import fr.umontpellier.localisermonenfant.fragments.ChildFragment;
+import fr.umontpellier.localisermonenfant.fragments.MapsControlFragment;
+import fr.umontpellier.localisermonenfant.fragments.UploadPhotoFragment;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
@@ -30,8 +34,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-         toolbar =(Toolbar) findViewById(R.id.topAppBar);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        toolbar = (Toolbar) findViewById(R.id.topAppBar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
@@ -42,9 +46,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         //navigationView.setCheckedItem(R.id.);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        MyAccountFragment fragment = new MyAccountFragment();
+        //MapsControlFragment fragment = new MapsControlFragment();
+        UploadPhotoFragment fragment = new UploadPhotoFragment();
         fragmentManager.beginTransaction().replace(R.id.frameLayout, fragment).commit();
 
+        FragmentManager fragmentManager2 = getSupportFragmentManager();
+        ChildFragment childFragment = new ChildFragment();
+        fragmentManager2.beginTransaction().replace(R.id.frame_container_childs, childFragment).commit();
     }
 
     private void setupDrawer() {
@@ -73,11 +81,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public void onBackPressed(){
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        }
-        else {
+        } else {
             super.onBackPressed();
         }
     }
@@ -89,12 +96,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         switch (item.getItemId()) {
             case R.id.nav_home:
-               fragment = new MapsControlFragment();
+                fragment = new MapsControlFragment();
                 break;
-            case R.id.nav_change_photo_name:
-                fragment = new MyAccountFragment();
+            case R.id.nav_zone_parameter:
+                fragment = new BlankZoneMenu();
                 break;
-                case R.id.nav_add_new_child:
+            case R.id.nav_add_new_child:
                 fragment = new AddChildFragment();
                 break;
         }
@@ -106,7 +113,18 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.navigation_drawer, menu);
+        getMenuInflater().inflate(R.menu.action_menu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.autre:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

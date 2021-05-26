@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                 } else if (TextUtils.isEmpty(Objects.requireNonNull(userLogin).getPassword())) {
                     binding.editTextPassword.setError("Entrer un mot de passe");
                     binding.editTextPassword.requestFocus();
-                } else if (userLogin.isPasswordLengthGreaterThan5()) {
+                } else if (!userLogin.isPasswordLengthGreaterThan5()) {
                     binding.editTextPassword.setError("Mot de passe doit être au minimuin 4 chiffres");
                     binding.editTextPassword.requestFocus();
                 } else {

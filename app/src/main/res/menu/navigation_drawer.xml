@@ -13,9 +13,9 @@
         android:icon="@drawable/ic_person_add_24px"
         android:title="@string/ajouter_un_enfant" />
         <item
-            android:id="@+id/nav_change_photo_name"
+            android:id="@+id/nav_zone_parameter"
             android:icon="@drawable/ic_create_24px"
-            android:title="@string/change_photo_name" />
+            android:title="@string/zone_parameter" />
         <item
             android:id="@+id/nav_update_frequency"
             android:icon="@drawable/ic_sync_24px"

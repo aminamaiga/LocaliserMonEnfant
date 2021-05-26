@@ -5,11 +5,11 @@ import android.content.DialogInterface;
 
 import androidx.appcompat.app.AlertDialog;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
 public class AlertNetworkError {
-
-
-    public static void showNetworkDialog(Context context, String message){
-        AlertDialog.Builder alertDialogBuilder=new AlertDialog.Builder(context);
+    public static void showNetworkDialog(Context context, String message) {
+        MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(context);
 
         alertDialogBuilder.setTitle("Erreur !");
 

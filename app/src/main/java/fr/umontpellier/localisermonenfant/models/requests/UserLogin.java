@@ -49,6 +49,6 @@ public class UserLogin {
     }
 
     public boolean isPasswordLengthGreaterThan5() {
-        return ! (getPassword().length() < 4);
+        return  (getPassword().length() >= 4);
     }
 }
